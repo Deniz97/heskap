@@ -51,6 +51,22 @@ for t in range(time_steps):
 		#then mark the added ride "isTaken=True"
 		c.addRide()
 
+	#maybe re-assign drives here
+
+	###
+
+	for c in cars:
+		c.moveOneStep()
+
+	t+=1
+
+
+
+for c in cars:
+	print(assignedRides)
+
+
+
 
 
 
