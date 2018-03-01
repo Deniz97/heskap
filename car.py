@@ -7,6 +7,8 @@ class Car :
 		self.rideOnProgress = None
 		self.movements = 0 
 		self.destination = None
+		self.availableRides = []
+
 	"""Yolu alıcak ve movementsı ayarlıcak"""
 	def addRide(self,ride:Ride):
 		if self.isEmpty():
@@ -26,7 +28,8 @@ class Car :
 		return self.coords
 
 	def getDestination(self):
-		if self.
+		#if self.
+		pass
 	
 	"""Aracı n adım kadar ilerlet"""
 	def move(self,n):
@@ -42,8 +45,12 @@ class Car :
 			self.done.append(ride.rideNumber)
 		
 		
-	def addBestRideGivenRides(self,rideList):
-		pass
+	def addBestRideGivenRides(self):
+		for r in self.availableRides:
+			if not r.isTaken:
+				self.addRide(r)
+	
+
 	def calculatePointsForRide(self,ride:Ride):
 		pass
 	
