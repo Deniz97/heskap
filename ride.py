@@ -4,8 +4,7 @@ class Ride:
 		self.to = to
 		self.earliestStart = earliestStart
 		self.latestFinish = latestFinish
-		self.rideNumber = rideNumbe
-		self.rideNumber = rideNumberr
+		self.rideNumber = rideNumber
 
 
 	def from(self):
