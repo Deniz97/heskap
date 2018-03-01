@@ -1,9 +1,11 @@
 class Ride:
-	def __init__(self,frm,to,earliestStart,latestFinish):
+	def __init__(self,frm,to,earliestStart,latestFinish,rideNumber):
 		self.frm = frm
 		self.to = to
 		self.earliestStart = earliestStart
 		self.latestFinish = latestFinish
+		self.rideNumber = rideNumbe
+		self.rideNumber = rideNumberr
 
 
 	def from(self):
