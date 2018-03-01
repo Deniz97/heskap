@@ -8,14 +8,16 @@ class Car :
 		self.rideOnProgress = None
 
 
-	def addRide(self,ride"""Ride"""):
+	def addRide(self,ride:Ride):
 		self.rideOnProgress = ride
-
-
+		
+		
 	def getCoords(self):
 		return self.coords
 
 	def move(self):
-		pass
-
+		
 	
+	def isEmpty(self):
+		return self.empty
+
