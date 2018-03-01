@@ -6,20 +6,26 @@ class Car :
 		#Ride Class
 		self.rideOnProgress = None
 		self.movements = 0 
-	
+		self.destination = None
 	"""Yolu alıcak ve movementsı ayarlıcak"""
 	def addRide(self,ride:Ride):
 		if self.isEmpty():
 			self.rideOnProgress = ride	
 			ride.taken()
-			if self.distance(ride) > earliestStar:
-			
+			self.destination = ride.destination()
+			#Araç earliestStarttan yakınsa 
+			self.movements = max(self.distanceBetweenRideAndCar(ride),ride.earliestStart()) + self.distanceBetweenEndAndBeginning()	
 		else:
 			print("İşi olan bir araca görev verildi." +ride.frm + self.to + self.rideNumber)
-		
+	
+
+	#Aracin yerini dondur.
 	def getCoords(self):
 		return self.coords
 
+	def getDestination(self):
+		if self.
+	
 	"""Aracı n adım kadar ilerlet"""
 	def move(self,n):
 		if self.movements > n:
@@ -31,8 +37,8 @@ class Car :
 			Ride ın sadece numarası ekleniyor.
 			Outputta sıkıntı çıkartabilir burası.
 			"""
-			self.done.append(self.rideNumber)
-			
+			self.done.append(ride.rideNumber)
+		
 		
 	def setNextTAvaibleRide(self,T):
 		pass
@@ -50,8 +56,7 @@ class Car :
 			return True
 
 		else:
-			return False
-
+			return False	
 	#Rideın başıyla bitimi arasındaki mesafe 
 	def distanceBetweenEndAndBeginning(self,ride):
 		return abs(ride.from()[0]-ride.to()[0]) + abs(ride.from()[1]-ride.to()[1])
