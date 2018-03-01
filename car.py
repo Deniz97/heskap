@@ -6,12 +6,12 @@ class Car :
 		#Ride Class
 		self.rideOnProgress = None
 		self.movements = 0 
-
+	
 	"""Yolu alıcak ve movementsı ayarlıcak"""
 	def addRide(self,ride:Ride):
 		if self.isEmpty():
 			self.rideOnProgress = ride	
-			
+			ride.taken()			
 		else:
 			print("İşi olan bir araca görev verildi." +ride.frm + self.to + self.rideNumber)
 		
@@ -25,7 +25,11 @@ class Car :
 		else:
 			self.movements = 0
 			self.coords = self.rideOnProgress.to
-			self.done.append(self.rideOnProgress)
+			"""
+			Ride ın sadece numarası ekleniyor.
+			Outputta sıkıntı çıkartabilir burası.
+			"""
+			self.done.append(self.rideNumber)
 			
 		
 	def setNextTAvaibleRide(self,T):
