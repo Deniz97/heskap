@@ -26,6 +26,10 @@ def cmpCar(car1, car2):
 
 r,c, vehicle_count, ride_conunt, bonus, time_steps = tuple(input().split(" "))
 
+##pezevenk müsterileri filterla
+##
+
+
 #obivous
 look_ahead_time_count = 100
 
