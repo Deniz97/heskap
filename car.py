@@ -51,8 +51,12 @@ class Car :
 
 		else:
 			return False
-	
-	
+
+	#Rideın başıyla bitimi arasındaki mesafe 
+	def distanceBetweenEndAndBeginning(self,ride):
+		return abs(ride.from()[0]-ride.to()[0]) + abs(ride.from()[1]-ride.to()[1])
+
+	#Araçla ride arasındaki mesafe
 	def distanceBetweenRideAndCar(self,ride):
 		rideCoords = ride.from()
 		return abs(self.coords[0]-rideCoords[0]) + abs(self.coords[1] - rideCoords[1])
