@@ -10,10 +10,12 @@ class Car :
 	"""Yolu alıcak ve movementsı ayarlıcak"""
 	def addRide(self,ride:Ride):
 		if self.isEmpty():
+			#Musteri 20 birimlik mesafeyi 10 birimde gitmeni istiyorsa
+
 			self.rideOnProgress = ride	
 			ride.taken()
 			self.destination = ride.destination()
-			#Araç earliestStarttan yakınsa 
+			#Arac earliestStarttan yakınsa araç bekliycek ve sonra gidicek yoksa arac direk gazliycak 
 			self.movements = max(self.distanceBetweenRideAndCar(ride),ride.earliestStart()) + self.distanceBetweenEndAndBeginning()	
 		else:
 			print("İşi olan bir araca görev verildi." +ride.frm + self.to + self.rideNumber)
@@ -40,9 +42,8 @@ class Car :
 			self.done.append(ride.rideNumber)
 		
 		
-	def setNextTAvaibleRide(self,T):
+	def addBestRideGivenRides(self,rideList):
 		pass
-
 	def calculatePointsForRide(self,ride:Ride):
 		pass
 	
