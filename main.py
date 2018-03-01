@@ -99,7 +99,7 @@ for t in range(time_steps):
 
 
 for c in cars:
-    print(assignedRides)
+    print(c.done)
 
 
 
