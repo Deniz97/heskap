@@ -5,7 +5,7 @@ class Ride:
 		self.earliestStart = earliestStart
 		self.latestFinish = latestFinish
 		self.rideNumber = rideNumber
-
+		self.isTaken = False
 
 	def from(self):
 		return self.frm
@@ -18,4 +18,10 @@ class Ride:
 
 	def latestFinish(self):
 		return self.latestFinish
+
+	def rideNumber(self):
+		return self.rideNumber
 	
+	#Rideın alınıp alınmadığını gösteriyor.
+	def taken(self):
+		self.isTaken = True
