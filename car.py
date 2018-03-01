@@ -11,7 +11,9 @@ class Car :
 	def addRide(self,ride:Ride):
 		if self.isEmpty():
 			self.rideOnProgress = ride	
-			ride.taken()			
+			ride.taken()
+			if self.distance(ride) > earliestStar:
+			
 		else:
 			print("İşi olan bir araca görev verildi." +ride.frm + self.to + self.rideNumber)
 		
@@ -49,5 +51,8 @@ class Car :
 
 		else:
 			return False
-
 	
+	
+	def distanceBetweenRideAndCar(self,ride):
+		rideCoords = ride.from()
+		return abs(self.coords[0]-rideCoords[0]) + abs(self.coords[1] - rideCoords[1])
