@@ -9,7 +9,7 @@ def setNextTAvailableRides(car,rides,current_time,look_ahead_time):
 	
 	reduced_rides.sort( key = lambda x: x.calcScore4Car(car,current_time)[0], reverse=True )
 
-	for r in reduced_rides:
+	car.availableRides = reduced_rides
 
 
 
