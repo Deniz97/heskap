@@ -16,7 +16,7 @@ class Car :
 
 			self.rideOnProgress = ride	
 			ride.taken()
-			self.destination = ride.destination()
+			self.destination = ride.to
 			#Arac earliestStarttan yakınsa araç bekliycek ve sonra gidicek yoksa arac direk gazliycak 
 			self.movements = max(self.distanceBetweenRideAndCar(ride),ride.earliestStart()) + self.distanceBetweenEndAndBeginning()	
 		else:
