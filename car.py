@@ -24,6 +24,9 @@ class Car :
 			self.movements -=n
 		else:
 			self.movements = 0
+			self.coords = self.rideOnProgress.to
+			self.done.append(self.rideOnProgress)
+			
 		
 
 	def getMovement(self):
