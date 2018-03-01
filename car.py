@@ -1,4 +1,4 @@
-import ride
+from ride import Ride
 class Car :
 	def __init__(self):
 		self.coords = (0,0)
@@ -28,7 +28,12 @@ class Car :
 			self.done.append(self.rideOnProgress)
 			
 		
+	def setNextTAvaibleRide(self,T):
+		pass
 
+	def calculatePointsForRide(self,ride:Ride):
+		pass
+	
 	def getMovement(self):
 		return self.movements
 
