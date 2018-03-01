@@ -7,9 +7,13 @@ class Car :
 		self.rideOnProgress = None
 		self.movements = 0 
 
-	"""Yolu alıcak ve """
+	"""Yolu alıcak ve movementsı ayarlıcak"""
 	def addRide(self,ride:Ride):
-		self.rideOnProgress = ride	
+		if self.isEmpty():
+			self.rideOnProgress = ride	
+			
+		else:
+			print("İşi olan bir araca görev verildi." +ride.frm + self.to + self.rideNumber)
 		
 	def getCoords(self):
 		return self.coords
@@ -20,8 +24,10 @@ class Car :
 			self.movements -=n
 		else:
 			self.movements = 0
-			
-	
+		
+
+	def getMovement(self):
+		return self.movements
 
 	"""Aracın uygun olup olmadığını kontrol et."""
 	"""Aracın yapıcağı hareket yoksa doğru varsa yanlış döndür."""
