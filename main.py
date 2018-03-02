@@ -3,15 +3,16 @@ import car
 from functools import cmp_to_key
 
 def setNextTAvailableRides(car,rides,current_time,look_ahead_time):
+    """
     reduced_rides = []    
     for r in rides:
         if r.earliestStart < current_time + look_ahead_time:
             reduced_rides.append( (r.calcScore4Car(car, current_time), r) )
         else:
             break
+"""
 
-
-    #reduced_rides = [ (x.calcScore4Car(car, current_time), x) for x in rides if (x.earliestStart < current_time + look_ahead_time) and (not x.isTaken) ]
+    reduced_rides = [ (x.calcScore4Car(car, current_time), x) for x in rides if (x.earliestStart < current_time + look_ahead_time) and (not x.isTaken) ]
     #print("in tavailabe red rides: ",reduced_rides)
     reduced_rides.sort( key = lambda x: x[0], reverse=True )
 
@@ -131,7 +132,7 @@ for t in range(time_steps):
 #print("finished")
 for i in range(len(cars)):
     
-    print(i+1,cars[i].done)
+    print(i," ".join(cars[i].done))
 
 
 
