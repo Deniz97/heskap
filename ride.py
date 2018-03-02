@@ -11,11 +11,8 @@ class Ride:
 		self.score = (tmpScore, tmpScore + bonus)
                 # a tuple of score w/o bonus and score w/ bonus
 
-	def from(self):
+	def fromm(self):
 		return self.frm
-
-	def to(self):
-		return self.to
 
 	def earliestStart(self):
 		return self.earliestStart
@@ -31,14 +28,24 @@ class Ride:
 		self.isTaken = True
     
         # return tuple of rate w/o bonus & w/ bonus & rideNumber
-    def calcScore4Car(self, car, curTime):
-        penalty = abs(self.frm[0] - car.coords[0]) + abs(self.frm[1] - car.coords[1])
-               
-        if curTime > self.earliestStart:
-            return (self.score[0] / penalty, self.score[0] / penalty, self.rideNumber)
-        else:
-            return (self.score[1] / penalty, self.score[1] / penalty, self.rideNumber)
-        
+	def calcScore4Car(self, car, curTime):
+		penalty = abs(self.frm[0] - car.coords[0]) + abs(self.frm[1] - car.coords[1])
+		
+		#chech later
+		if penalty==0:
+			penalty=1               
+		###
+		if curTime > self.earliestStart:
+			return self.score[0] / penalty
+		else:
+			return self.score[1] / penalty
+
+		"""
+		if curTime > self.earliestStart:
+			return (self.score[0] / penalty, self.score[0] / penalty, self.rideNumber)
+		else:
+			return (self.score[1] / penalty, self.score[1] / penalty, self.rideNumber)
+        """
 
                     
 
